@@ -21,13 +21,13 @@ const SPREADSHEET_ID = "TU_SHEET_ID"; // Reemplaza con el ID de tu Google Sheet
 
 
 //Para verificar conexion
-app.get("/api", (req, res) => {
+app.get("/api/ToDoList", (req, res) => {
   res.send({ message: "Hola desde el backend!" });
 });
 
 
 // Ruta para obtener la lista de tareas
-app.get("/api/todos", async (req, res) => {
+app.get("/api/ToDoList/todos", async (req, res) => {
     try {
         const response = await sheets.spreadsheets.values.get({
             spreadsheetId: SPREADSHEET_ID,
@@ -43,7 +43,7 @@ app.get("/api/todos", async (req, res) => {
 });
 
 // Ruta para agregar una tarea
-app.post("/api/todos", async (req, res) => {
+app.post("/api/ToDoList/todos", async (req, res) => {
     const { id, task } = req.body;
     try {
         await sheets.spreadsheets.values.append({

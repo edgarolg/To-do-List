@@ -1,38 +1,149 @@
-.App {
-  text-align: center;
+:root{
+  --statusOptionComplete: rgba(144,238,144, 1);
+  --statusOptionProgress: rgba(255,160,122, 1);
+  --statusOptionPending: rgba(255,126,126, 1);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
 
 .App-header {
   background-color: #282c34;
-  min-height: 100vh;
+  min-height: 10vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+
+.headerContainer{
+  width: 80%;
+  margin: auto;
+  display: flex;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.header-title{
+  width: 75%;
+}
+
+.headerLinks{
+  width: 20%;
+  font-size: small;
+}
+
+.generalContainer{
+  width: 90%;
+  margin: 5% auto;
+  display: grid;
+}
+
+.componentsContainer{
+  display: flex;
+}
+
+.generalTitle{
+  width: 100%;
+}
+
+
+.filtersContainer{
+  width: 20%;
+  margin-left: 2%;
+}
+
+.statusContainer{
+  min-height: 20vh;
+  height: 30vh;
+}
+
+.categoriesContainer{
+  min-height: 35vh;
+}
+
+.tableContainer{
+  width: 80%;
+}
+
+
+.titleFilters{
+  font-size: 3vh;
+  margin: 0%;
+}
+
+.titleLineDecorative{
+  display: block; 
+  border-top: 2px solid black;
+  margin: 10px 0;
+  width: 100%;
+}
+
+.optionsContainer{
+  width: 80%;
+  margin: auto;
+  display: flex;
+  gap: 2vh;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.optionsContainerCategories{
+  width: 80%;
+  margin: auto;
+  display: flex;
+  gap: 2vh;
+  flex-wrap: wrap;
+}
+
+.statusOption{
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  font-weight: bold;
+  border: none;
+  border-radius: 20px;
+  padding: 10px 10px;
+  cursor: pointer;
+  text-align: center;
+  display: inline-block;
+  min-width: 150px; 
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+
+.statusComplete{
+  background-color: var(--statusOptionComplete);
+  color: #212529; 
+}
+
+.statusProgress{
+  background-color: var(--statusOptionProgress); 
+  color: #212529; 
+}
+
+.statusPending{
+  background-color: var(--statusOptionPending);
+  color: #212529; 
+}
+
+
+.categoriesOption{
+  background-color: lightgray; 
+  color: black; 
+  border: none; 
+  padding: 5px 8px; 
+  font-size: 16px;
+  font-family: Arial, sans-serif;
+  cursor: pointer; 
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+  transition: background-color 0.3s ease;
+}
+
+.categoriesOption:hover{
+  background-color: gray;
+}
+
+.categoriesOption:active{
+  background-color: rgba(140,140,140, 1);
+  color: white;
 }
