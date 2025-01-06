@@ -8,7 +8,7 @@ module.exports = {
       const tasks = await googleSheets.getTasks();
       res.status(200).json(tasks);
     } catch (error) {
-      res.status(500).json({ error: 'Error obteniendo las tareas' });
+      res.status(500).json({ error: 'Error obteniendo las tareass' });
     }
   },
   async createTask(req, res) {
