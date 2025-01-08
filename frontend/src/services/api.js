@@ -1,12 +1,11 @@
-import axios from 'axios';
+import httpClient from './httpClient';
 
-const API_URL = 'http://localhost:5000/api/tasks';
 
 export const getTasks = async () => {
-  const response = await axios.get(API_URL);
+  const response = await httpClient.get('/allTasks');
   return response.data;
 };
 
 export const createTask = async (task) => {
-  await axios.post(API_URL, task);
+  await httpClient.post('/createTask', task);
 };

@@ -2,6 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const taskRoutes = require('./routes/tasks');
+
 require('dotenv').config();
 
 
@@ -13,4 +14,4 @@ app.use(bodyParser.json());
 app.use('/api/tasks', taskRoutes);
 
 const PORT = 5000;
-app.listen(PORT, () => console.log(`Servidor corriendo en puerto ${PORT}`));
+app.listen(PORT, () => console.log(`Servidor corriendo en puerto: ${PORT}`));
