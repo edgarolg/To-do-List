@@ -25,11 +25,28 @@ const TaskList = () => {
   }
 
   return (
-    <ul>
-      {tasks.map((task, index) => (
-        <li key={index}>{task[0]}</li> // Ajusta según la estructura de los datos
-      ))}
-    </ul>
+    <table>
+      <thead>
+        <tr>
+          <th>Status</th>
+          <th>Title</th>
+          <th>Description</th>
+          <th>Deadline</th>
+          <th>Tags</th>
+        </tr>
+      </thead>
+      <tbody>
+        {tasks.map((task) => (
+          <tr key={task.id} className={`task${task.id}`}>
+            <td>{task.status}</td>
+            <td>{task.title}</td>
+            <td>{task.description}</td>
+            <td>{task.deadline}</td>
+            <td>{task.tags.join(', ')}</td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
   );
 };
 
