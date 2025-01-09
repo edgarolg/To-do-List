@@ -1,29 +1,65 @@
-// Controladores de tareas
-const googleSheets = require('../services/googleSheets');
+const Task = require('../models/Task'); // Importa el modelo
 
 module.exports = {
+  // Probar el servidor
   async serverTest(req, res) {
-    try {
-      await googleSheets.serverTest(req, res);
-    } catch (error) {
-      res.status(500).json({ error: 'Error en el servidor' });
-    }
+    res.status(200).json({ message: 'Servidor corriendo correctamente' });
   },
-  async getAllTasks(req, res) {
+
+  // Obtener todas las tareas
+  async getTasks(req, res) {
     try {
-      const tasks = await googleSheets.getTasks();
+      console.log('Obteniendo tareas...');
+      const tasks = await Task.find();
+      console.log('Tareas obtenidas:');
       res.status(200).json(tasks);
     } catch (error) {
-      res.status(500).json({ error: 'Error obteniendo las tareass' });
+      console.error('Error al obtener tareas:', error);
+      res.status(500).json({ error: 'Error al obtener tareas' });
     }
   },
-  async createTask(req, res) {
+
+  // Crear una nueva tarea
+  async addTask(req, res) {
     try {
-      const task = req.body;
-      await googleSheets.addTask(task);
-      res.status(201).json({ message: 'Tarea añadida correctamente' });
+      console.log('Creando tarea...');
+      const task = new Task(req.body); // Crea una nueva tarea con los datos del cuerpo de la solicitud
+      const savedTask = await task.save(); // Guarda la tarea en la base de datos
+      console.log('Tarea creada:', savedTask);
+      res.status(201).json(savedTask);
     } catch (error) {
-      res.status(500).json({ error: 'Error creando la tarea' });
+      console.error('Error al crear tarea:', error);
+      res.status(400).json({ error: 'Error al crear tarea' });
+    }
+  },
+
+  // Actualizar una tarea existente
+  async updateTask(req, res) {
+    try {
+      const { id } = req.params; // Obtén el ID de la tarea de los parámetros
+      const updatedTask = await Task.findByIdAndUpdate(id, req.body, { new: true }); // Actualiza la tarea y devuelve la versión actualizada
+      if (!updatedTask) {
+        return res.status(404).json({ error: 'Tarea no encontrada' });
+      }
+      res.status(200).json(updatedTask);
+    } catch (error) {
+      console.error('Error al actualizar tarea:', error);
+      res.status(400).json({ error: 'Error al actualizar tarea' });
+    }
+  },
+
+  // Eliminar una tarea
+  async deleteTask(req, res) {
+    try {
+      const { id } = req.params; // Obtén el ID de la tarea de los parámetros
+      const deletedTask = await Task.findByIdAndDelete(id); // Elimina la tarea de la base de datos
+      if (!deletedTask) {
+        return res.status(404).json({ error: 'Tarea no encontrada' });
+      }
+      res.status(200).json({ message: 'Tarea eliminada exitosamente' });
+    } catch (error) {
+      console.error('Error al eliminar tarea:', error);
+      res.status(400).json({ error: 'Error al eliminar tarea' });
     }
   },
 };
