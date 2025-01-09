@@ -1,5 +1,8 @@
 
 import './App.css';
+import CategoriesFilter from './components/Filters/CategoriesFilter';
+import TaskList from './components/TaskList';
+import StatusFilter from './components/Filters/StatusFilter';
 
 function App() {
   return (
@@ -16,51 +19,11 @@ function App() {
         <h1 className='generalTitle'>Task</h1>
         <div className='componentsContainer'>
           <div className='filtersContainer'>
-            <div className='statusContainer'>
-              <p className='titleFilters'>
-                Status
-              </p>
-              <span className='titleLineDecorative'></span>
-              <div className='optionsContainer'>
-                <button className='statusOption statusComplete'>
-                  Complete
-                </button>
-                <button className='statusOption statusProgress'>
-                  In Progress
-                </button>
-                <button className='statusOption statusPending'>
-                  Pending
-                </button>
-              </div>
-            </div>
-            <div className='categoriesContainer'>
-              <p className='titleFilters'>
-                Categories
-              </p>
-              <span className='titleLineDecorative'></span>
-              <div className='optionsContainerCategories'>
-                <button className='categoriesOption'>
-                  Work
-                </button>
-                <button className='categoriesOption'>
-                  School
-                </button>
-                <button className='categoriesOption'>
-                  GYM
-                </button>
-                <button className='categoriesOption'>
-                  Life
-                </button>
-                <button className='categoriesOption'>
-                  Investments
-                </button>
-                <button className='categoriesOption'>
-                  Hobby
-                </button>
-              </div>
-            </div>
+            <StatusFilter />
+            <CategoriesFilter />
           </div>
           <div className='tableContainer'>
+            <TaskList />
           </div>
         </div>
       </div>

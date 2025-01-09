@@ -4,7 +4,6 @@
   --statusOptionPending: rgba(255,126,126, 1);
 }
 
-
 .App-header {
   background-color: #282c34;
   min-height: 10vh;
@@ -16,6 +15,7 @@
 }
 
 
+/*ESTILOS DEL HEADER*/
 .headerContainer{
   width: 80%;
   margin: auto;
@@ -31,6 +31,9 @@
   font-size: small;
 }
 
+
+
+/*ESTILOS GENERALES*/
 .generalContainer{
   width: 90%;
   margin: 5% auto;
@@ -51,20 +54,6 @@
   margin-left: 2%;
 }
 
-.statusContainer{
-  min-height: 20vh;
-  height: 30vh;
-}
-
-.categoriesContainer{
-  min-height: 35vh;
-}
-
-.tableContainer{
-  width: 80%;
-}
-
-
 .titleFilters{
   font-size: 3vh;
   margin: 0%;
@@ -77,73 +66,8 @@
   width: 100%;
 }
 
-.optionsContainer{
+.tableContainer{
   width: 80%;
-  margin: auto;
-  display: flex;
-  gap: 2vh;
-  flex-wrap: wrap;
-  justify-content: center;
 }
 
-.optionsContainerCategories{
-  width: 80%;
-  margin: auto;
-  display: flex;
-  gap: 2vh;
-  flex-wrap: wrap;
-}
-
-.statusOption{
-  font-family: Arial, sans-serif;
-  font-size: 14px;
-  font-weight: bold;
-  border: none;
-  border-radius: 20px;
-  padding: 10px 10px;
-  cursor: pointer;
-  text-align: center;
-  display: inline-block;
-  min-width: 150px; 
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  transition: transform 0.2s, box-shadow 0.2s;
-}
-
-
-.statusComplete{
-  background-color: var(--statusOptionComplete);
-  color: #212529; 
-}
-
-.statusProgress{
-  background-color: var(--statusOptionProgress); 
-  color: #212529; 
-}
-
-.statusPending{
-  background-color: var(--statusOptionPending);
-  color: #212529; 
-}
-
-
-.categoriesOption{
-  background-color: lightgray; 
-  color: black; 
-  border: none; 
-  padding: 5px 8px; 
-  font-size: 16px;
-  font-family: Arial, sans-serif;
-  cursor: pointer; 
-  border-radius: 4px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
-  transition: background-color 0.3s ease;
-}
-
-.categoriesOption:hover{
-  background-color: gray;
-}
-
-.categoriesOption:active{
-  background-color: rgba(140,140,140, 1);
-  color: white;
-}
+/*AQUI SE ACABAN LOS ESTILOS GENERALES*/
