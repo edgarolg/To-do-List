@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { getTasks } from '../services/api';
+import './TaskList.css';
 
 const TaskList = () => {
   const [tasks, setTasks] = useState([]);
