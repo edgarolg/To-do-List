@@ -1,0 +1,65 @@
+/* Table Container */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  border-left: 3px solid #ccc;
+}
+
+/* Header Styles */
+thead {
+  background-color: #ccc;
+}
+
+th {
+  padding: 16px;
+  text-align: left;
+  font-weight: 600;
+  font-size: 14px;
+  color: #444;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border-bottom: 2px solid #eee;
+}
+
+/* Cell Styles */
+td {
+  padding: 16px;
+  font-size: 14px;
+  color: #333;
+  border-bottom: 1px solid #eee;
+  line-height: 1.4;
+}
+
+/* Row Hover Effect */
+tbody tr:hover {
+  background-color: #fff;
+  transition: background-color 0.2s ease;
+}
+
+/* Status Column Styling */
+td:first-child {
+  font-weight: 500;
+}
+
+/* Tags Styling */
+td:last-child {
+  color: #666;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  table {
+    font-size: 13px;
+  }
+  
+  th, td {
+    padding: 12px;
+  }
+}
+
+/* Optional: Add these classes for different status states */
+.status-pending { color: #f0b429; }
+.status-completed { color: #2f855a; }
+.status-in-progress { color: #3182ce; }
